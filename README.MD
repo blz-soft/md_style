@@ -31,69 +31,71 @@ ssh aoki@192.168.0.1:2222 -k aoao -i /root/home/aoki/ao.key
 
 #### webにつながる場合  
 ```
-<script src="https://blz-soft.github.io/md_style/md_style.js"></script>
+<script src="https://blz-soft.github.io/md_style/release/v1.2/md_style.js" ></script>
 ```
 
 #### webにつながらない場合  
 ```
 <script type="text/javascript">
+// Copyright (c) 2021 Daichi Aoki  
+// Released under the [MIT license](https://github.com/blz-soft/md_style/blob/main/LICENSE)
 
-    // preブロッグにコピー機能を付ける
-    let pre_tags = document.getElementsByTagName("pre");
-    let counter = 0;
-    while (counter < pre_tags.length ) {
-        console.log(pre_tags[counter]);
-        
-        let code_tag = pre_tags[counter].getElementsByTagName("code")[0];
+// preブロッグにコピー機能を付ける
+let pre_tags = document.getElementsByTagName("pre");
+let counter = 0;
+while (counter < pre_tags.length ) {
+    console.log(pre_tags[counter]);
+    
+    let code_tag = pre_tags[counter].getElementsByTagName("code")[0];
 
-        let tag_id = "code_"+counter;
-        code_tag.setAttribute("id", tag_id);
+    let tag_id = "code_"+counter;
+    code_tag.setAttribute("id", tag_id);
 
-        let copy_button = document.createElement('div');
-        copy_button.innerText = "　"
-        let button_id = "button_" + counter;
-        copy_button.setAttribute("id", button_id);
-        copy_button.setAttribute("style", "position: relative; left: 80%; top: 0px;\
-            border: 0px;\
-            font-weight: bold;\
-            pading: 0px;\
-            margin: 0px;\
-            width: 80px;\
-            background-color: transparent;\
-            border: none;\
-            cursor: pointer;\
-            outline: none;\
-            padding: 0;\
-            appearance: none;")
-        copy_button.setAttribute("onClick", "selectText(\""+ tag_id +"\", \"" + button_id +"\")");
+    let copy_button = document.createElement('div');
+    copy_button.innerText = "　"
+    let button_id = "button_" + counter;
+    copy_button.setAttribute("id", button_id);
+    copy_button.setAttribute("style", "position: relative; left: 80%; top: 0px;\
+        border: 0px;\
+        font-weight: bold;\
+        pading: 0px;\
+        margin: 0px;\
+        width: 80px;\
+        background-color: transparent;\
+        border: none;\
+        cursor: pointer;\
+        outline: none;\
+        padding: 0;\
+        appearance: none;")
+    copy_button.setAttribute("onClick", "selectText(\""+ tag_id +"\", \"" + button_id +"\")");
 
-        pre_tags[counter].insertBefore(copy_button, code_tag);
+    pre_tags[counter].insertBefore(copy_button, code_tag);
 
-        pre_tags[counter].addEventListener('mouseover', ()  => {
-                copy_button.innerText = "Copy"
-            }, false);
-        pre_tags[counter].addEventListener('mouseleave', () => {
-                copy_button.innerText = "　"
-            }, false);
+    pre_tags[counter].addEventListener('mouseover', ()  => {
+            copy_button.innerText = "Copy"
+        }, false);
+    pre_tags[counter].addEventListener('mouseleave', () => {
+            copy_button.innerText = "　"
+        }, false);
 
-        counter +=1;
-    }
-        
-    function selectText(tag_id, button_id) {
+    counter +=1;
+}
+    
+function selectText(tag_id, button_id) {
 
-        let elm = document.getElementById(button_id);
-        elm.textContent = 'Copied!!';
+    let elm = document.getElementById(button_id);
+    elm.textContent = 'Copied!!';
 
-        let selection = window.getSelection();
-        selection.removeAllRanges();
+    let selection = window.getSelection();
+    selection.removeAllRanges();
 
-        var element= document.getElementById(tag_id);
-        var rng = document.createRange();
-        rng.selectNodeContents(element);
-        window.getSelection().addRange(rng);
+    var element= document.getElementById(tag_id);
+    var rng = document.createRange();
+    rng.selectNodeContents(element);
+    window.getSelection().addRange(rng);
 
-        document.execCommand("copy");
-    }
+    document.execCommand("copy");
+}
 </script>
 ```
 ### 2. vscodeの設定を変更する
@@ -110,4 +112,4 @@ ssh aoki@192.168.0.1:2222 -k aoao -i /root/home/aoki/ao.key
 
 
 <!-- スタイルのjs -->
-<script src="https://blz-soft.github.io/md_style/md_style.js"></script>
+<script src="https://blz-soft.github.io/md_style/release/v1.2/md_style.js"></script>
