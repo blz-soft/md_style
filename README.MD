@@ -1,8 +1,12 @@
-# Markdownのコードブロックにクリップボードに保存するボタンを追加するスクリプト
+# Markdownにコピーボタンを追加するスクリプト
+
+作成日 2021年7月10日  
+Copyright (c) 2021 Daichi Aoki  
+Released under the [MIT license](https://github.com/blz-soft/md_style/blob/main/LICENSE)
 
 ## 利用できる環境
 `vscode`ではとりあえず利用できます。  
-利用できないエディタもある場合があります。
+利用できないエディタもあります。
 
 ## どんなことができるか?
 
@@ -19,10 +23,18 @@ ssh aoki@192.168.0.1:2222 -k aoao -i /root/home/aoki/ao.key
 
 ## 使い方
 1. スクリプトをmarkdownに張り付ける。
-2. vscodeで開いたときにパーミッションを聞かれた場合は、すべて許可するを選択する。
+2. vscodeの設定を変更する。
 
 ### 1. スクリプトをmarkdownに張り付ける。
-    
+
+以下のスクリプトをマークダウンの最下部に張り付けて、利用できます。  
+
+#### webにつながる場合  
+```
+<script src="https://blz-soft.github.io/md_style/md_style.js"></script>
+```
+
+#### webにつながらない場合  
 ```
 <script type="text/javascript">
 
@@ -84,16 +96,18 @@ ssh aoki@192.168.0.1:2222 -k aoao -i /root/home/aoki/ao.key
     }
 </script>
 ```
-### 2. `vscode`で利用する際に、パーミッションを聞かれた際は、すべて許可にする。
+### 2. vscodeの設定を変更する
 
-vscodeでプレビューをすると以下のようなポップアップが表示されるので、ポップアップをクリックします。  
+#### 1. vscodeでプレビューを開始し、ポップアップをクリックします。  
 ![](README_img/2021-07-10-13-09-08.png)
+##### ポップアップが出なければ、下の図を参考に選択画面を開いてください。
+![](README_img/2021-07-10-23-34-36.png)
 
-すると以下のような選択画面が表示されるので、`無効にする`を選択します。英語の場合は、`Disable`と表示されます。
-![](README_img/2021-07-10-13-08-42.png)
+#### 2. 選択画面で、`無効にする`を選択します。英語の場合は、`Disable`と表示されます。
+![](https://raw.githubusercontent.com/blz-soft/md_style/v1.0/README_img/2021-07-10-13-08-42.png)
 
-以上の手順でコピーボタンを出現させることができます!!!
+#### 以上の手順でコピーボタンを出現させることができます!!!
 
 
 <!-- スタイルのjs -->
-<script type="text/javascript" src="md_style.js"></script>
+<script src="https://blz-soft.github.io/md_style/md_style.js"></script>

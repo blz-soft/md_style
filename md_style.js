@@ -1,3 +1,6 @@
+// Copyright (c) 2021 Daichi Aoki  
+// Released under the [MIT license](https://github.com/blz-soft/md_style/blob/main/LICENSE)
+
 // preブロッグにコピー機能を付ける
 let pre_tags = document.getElementsByTagName("pre");
 let counter = 0;
